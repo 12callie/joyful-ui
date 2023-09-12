@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { inject, Ref } from 'vue'
+
+const menuLocation = inject<Ref<boolean>>('menuLocation')
+
 
 </script>
 
@@ -7,10 +11,12 @@
     <div class="nav-content">
       <router-link to="/" class="logo">
         <img src="../assets/img/logo.png" alt="logo" />
-        <span class="logo-text">Joyful UI</span>
+        <span v-if="menuLocation" class="logo-text">Joyful UI</span>
       </router-link>
-
-      <div class="nav-menu">
+      <svg v-if="!menuLocation" class="icon">
+        <use xlink:href="#icon-menu"></use>
+      </svg>
+      <div v-if="menuLocation" class="nav-menu">
         <ol>
           <li>
             <router-link to="/">首页</router-link>
