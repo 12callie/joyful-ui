@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { inject, Ref } from 'vue'
+import { inject, Ref, ref } from 'vue'
+import MenuContent from './MenuContent.vue'
 
 const menuLocation = inject<Ref<boolean>>('menuLocation')
-
-
+const levitationMenuVisible = ref(false)
+const toggleMenu = () => {
+  levitationMenuVisible.value = !levitationMenuVisible.value
+}
 </script>
 
 <template>
@@ -13,7 +16,7 @@ const menuLocation = inject<Ref<boolean>>('menuLocation')
         <img src="../assets/img/logo.png" alt="logo" />
         <span v-if="menuLocation" class="logo-text">Joyful UI</span>
       </router-link>
-      <svg v-if="!menuLocation" class="icon">
+      <svg v-if="!menuLocation" class="icon" @click="toggleMenu">
         <use xlink:href="#icon-menu"></use>
       </svg>
       <div v-if="menuLocation" class="nav-menu">
@@ -30,6 +33,12 @@ const menuLocation = inject<Ref<boolean>>('menuLocation')
           <li><a href="http://github.com">GitHub</a></li>
         </ol>
       </div>
+    </div>
+    <div
+        class="j-menu-levitation"
+        v-if="!menuLocation && levitationMenuVisible"
+    >
+      <menu-content />
     </div>
   </div>
 </template>
