@@ -1,10 +1,11 @@
 <script lang="ts" setup>
-
+import TopNav from '../components/TopNav.vue'
 
 </script>
 
 
 <template>
+  <top-nav />
   <div class="content">
     <h1>Joyful UI</h1>
     <p>一个 Vue 3 组件库</p>
