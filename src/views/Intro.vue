@@ -5,7 +5,7 @@
 
 
 <template>
-  文档
+  intro
 </template>
 
-<style scoped></style>
+<style scoped lang="scss"></style>
