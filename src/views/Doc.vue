@@ -1,8 +1,11 @@
 <script lang="ts" setup>
 
+
 </script>
 
 
 <template>
-  <router-view />
+  文档
 </template>
+
+<style scoped></style>
