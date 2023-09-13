@@ -22,7 +22,7 @@ import TopNav from '../components/TopNav.vue'
   </div>
 </template>
 
-<style scoped lang="scss">·
+<style scoped lang="scss">
 
 @import "../assets/styles/common.scss";
 
