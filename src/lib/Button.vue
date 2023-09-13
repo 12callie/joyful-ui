@@ -1,19 +1,28 @@
 <script lang="ts" setup>
-import { defineProps } from 'vue'
+import { defineProps, computed } from 'vue'
 
 const props = defineProps({
   theme: {
     type: String,
     default: 'default',
   },
+  dashed: {
+    type: Boolean,
+    default: false,
+  },
 })
-
+const classes = computed(() => {
+  return {
+    [`j-button-theme-${props.theme}`]: props.theme,
+    [`j-button-dashed`]: props.dashed,
+  }
+})
 
 </script>
 
 
 <template>
-  <button class="j-button" :class="`j-button-theme-${props.theme}`">
+  <button class="j-button" :class="classes">
     <slot></slot>
   </button>
 </template>
@@ -104,7 +113,70 @@ $error-color: #d03050;
       border-color: lighten($error-color, 5%);
     }
   }
-}
 
+  &.j-button-dashed {
+    border-style: dashed;
+
+    &.j-button-theme-primary {
+      background: #fff;
+      color: $theme-color;
+      border-color: $theme-color;
+
+      &:hover,
+      &:focus {
+        border-color: lighten($theme-color, 10%);
+        color: lighten($theme-color, 10%);
+      }
+    }
+
+    &.j-button-theme-info {
+      background: #fff;
+      color: $info-color;
+      border-color: $info-color;
+
+      &:hover,
+      &:focus {
+        border-color: lighten($info-color, 10%);
+        color: lighten($info-color, 10%);
+      }
+    }
+
+    &.j-button-theme-success {
+      background: #fff;
+      color: $theme-color;
+      border-color: $theme-color;
+
+      &:hover,
+      &:focus {
+        border-color: lighten($theme-color, 10%);
+        color: lighten($theme-color, 10%);
+      }
+    }
+
+    &.j-button-theme-warning {
+      background: #fff;
+      color: $warning-color;
+      border-color: $warning-color;
+
+      &:hover,
+      &:focus {
+        border-color: lighten($warning-color, 10%);
+        color: lighten($warning-color, 10%);
+      }
+    }
+
+    &.j-button-theme-error {
+      background: #fff;
+      color: $error-color;
+      border-color: $error-color;
+
+      &:hover,
+      &:focus {
+        border-color: lighten($error-color, 10%);
+        color: lighten($error-color, 10%);
+      }
+    }
+  }
+}
 
 </style>
