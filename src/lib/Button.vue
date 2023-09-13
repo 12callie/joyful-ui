@@ -18,6 +18,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
 })
 const classes = computed(() => {
   return {
@@ -32,7 +36,7 @@ const classes = computed(() => {
 
 
 <template>
-  <button class="j-button" :class="classes">
+  <button class="j-button" :class="classes" :disabled="disabled">
     <slot></slot>
   </button>
 </template>
@@ -213,6 +217,23 @@ $error-color: #d03050;
     box-shadow: none;
   }
 
+  &[disabled] {
+    &[disabled] {
+      cursor: not-allowed;
+      color: rgb(224, 224, 230);
+      border-color: rgb(224, 224, 230);
+
+      background: #fff;
+
+      &:hover,
+      &:focus {
+        background: #fff;
+        border-color: rgb(224, 224, 230);
+        color: rgb(224, 224, 230);
+      }
+    }
+
+  }
 }
 
 </style>

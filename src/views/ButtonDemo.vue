@@ -37,6 +37,10 @@ import Button from '../lib/Button.vue'
     <div>文本按钮</div>
     <Button text>这是一个文本按钮</Button>
   </div>
+  <div>
+    <div>禁用</div>
+    <Button disabled>不许点</Button>
+  </div>
 </template>
 
 <style scoped lang="scss"></style>
