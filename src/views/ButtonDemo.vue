@@ -9,7 +9,11 @@ import Button from '../lib/Button.vue'
   <h2>基础用法</h2>
   <div>
     <Button>Default</Button>
-
+    <Button theme="primary">Primary</Button>
+    <Button theme="info">Info</Button>
+    <Button theme="success">Success</Button>
+    <Button theme="warning">Warning</Button>
+    <Button theme="error">Error</Button>
   </div>
 </template>
 

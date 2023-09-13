@@ -1,11 +1,19 @@
 <script lang="ts" setup>
+import { defineProps } from 'vue'
+
+const props = defineProps({
+  theme: {
+    type: String,
+    default: 'default',
+  },
+})
 
 
 </script>
 
 
 <template>
-  <button class="j-button">
+  <button class="j-button" :class="`j-button-theme-${props.theme}`">
     <slot></slot>
   </button>
 </template>
@@ -41,5 +49,62 @@ $error-color: #d03050;
   &:focus {
     outline: none;
   }
+
+  &.j-button-theme-primary {
+    color: #fff;
+    background: $theme-color;
+
+    &:hover,
+    &:focus {
+      background: lighten($theme-color, 5%);
+      border-color: lighten($theme-color, 5%);
+    }
+  }
+
+  &.j-button-theme-info {
+    color: #fff;
+    background: $info-color;
+
+    &:hover,
+    &:focus {
+      background: lighten($info-color, 5%);
+      border-color: lighten($info-color, 5%);
+    }
+  }
+
+  &.j-button-theme-success {
+    color: #fff;
+    background: $theme-color;
+
+    &:hover,
+    &:focus {
+      background: lighten($theme-color, 5%);
+      border-color: lighten($theme-color, 5%);
+    }
+  }
+
+  &.j-button-theme-warning {
+    color: #fff;
+    background: $warning-color;
+
+    &:hover,
+    &:focus {
+      background: lighten($warning-color, 5%);
+      border-color: lighten($warning-color, 5%);
+    }
+  }
+
+  &.j-button-theme-error {
+    color: #fff;
+    background: $error-color;
+
+    &:hover,
+    &:focus {
+      background: lighten($error-color, 5%);
+      border-color: lighten($error-color, 5%);
+    }
+  }
 }
+
+
 </style>
