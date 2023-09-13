@@ -1,6 +1,15 @@
 <script lang="ts" setup>
 import Button from '../lib/Button.vue'
+import { ref } from 'vue'
 
+const loadingRef = ref(false)
+
+function handleClick () {
+  loadingRef.value = true
+  setTimeout(() => {
+    loadingRef.value = false
+  }, 2000)
+}
 </script>
 
 
@@ -40,6 +49,11 @@ import Button from '../lib/Button.vue'
   <div>
     <div>禁用</div>
     <Button disabled>不许点</Button>
+  </div>
+  <div>
+    <div>加载中</div>
+    <Button class="j-loadingButton" loading>加载中</Button>
+    <Button :loading="loadingRef" @click="handleClick">点我</Button>
   </div>
 </template>
 

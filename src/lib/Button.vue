@@ -22,6 +22,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  loading: {
+    type: Boolean,
+    default: false,
+  },
 })
 const classes = computed(() => {
   return {
@@ -29,17 +33,20 @@ const classes = computed(() => {
     [`j-button-dashed`]: props.dashed,
     [`j-button-size-${props.size}`]: props.size,
     [`j-button-text`]: props.text,
+    [`j-button-loading`]: props.loading,
   }
 })
-
 </script>
 
 
 <template>
-  <button class="j-button" :class="classes" :disabled="disabled">
-    <slot></slot>
+  <button class="j-button" :class="classes" :disabled="disabled || loading">
+    <span></span>
+    <span class="j-button-loadingIndicator" v-if="loading"></span>
+    <slot />
   </button>
 </template>
+
 
 <style lang="scss">
 $theme-color: #18a058;
@@ -191,7 +198,20 @@ $error-color: #d03050;
       }
     }
 
+    &[disabled] {
+      cursor: not-allowed;
+      color: rgb(224, 224, 230);
+      border-color: rgb(224, 224, 230);
 
+      background: #fff;
+
+      &:hover,
+      &:focus {
+        background: #fff;
+        border-color: rgb(224, 224, 230);
+        color: rgb(224, 224, 230);
+      }
+    }
   }
 
   &.j-button-size-tiny {
@@ -218,21 +238,52 @@ $error-color: #d03050;
   }
 
   &[disabled] {
-    &[disabled] {
-      cursor: not-allowed;
-      color: rgb(224, 224, 230);
-      border-color: rgb(224, 224, 230);
+    cursor: not-allowed;
+    color: rgb(224, 224, 230);
+    border-color: rgb(224, 224, 230);
 
+    background: #fff;
+
+    &:hover,
+    &:focus {
       background: #fff;
+      border-color: rgb(224, 224, 230);
+      color: rgb(224, 224, 230);
+    }
+  }
 
+  &.j-button-loading {
+    cursor: wait;
+    border-color: lighten($theme-color, 10%);
+    color: lighten($theme-color, 10%);
+
+    &[disabled] {
       &:hover,
       &:focus {
-        background: #fff;
-        border-color: rgb(224, 224, 230);
-        color: rgb(224, 224, 230);
+        border-color: lighten($theme-color, 10%);
+        color: lighten($theme-color, 10%);
       }
     }
+  }
 
+  .j-button-loadingIndicator {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    border: 2px solid $theme-color;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: j-loading-spin 1s infinite linear;
+  }
+}
+
+@keyframes j-loading-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
 
