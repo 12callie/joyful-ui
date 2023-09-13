@@ -10,11 +10,21 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  size: {
+    type: String,
+    default: 'medium',
+  },
+  text: {
+    type: Boolean,
+    default: false,
+  },
 })
 const classes = computed(() => {
   return {
     [`j-button-theme-${props.theme}`]: props.theme,
     [`j-button-dashed`]: props.dashed,
+    [`j-button-size-${props.size}`]: props.size,
+    [`j-button-text`]: props.text,
   }
 })
 
@@ -176,7 +186,33 @@ $error-color: #d03050;
         color: lighten($error-color, 10%);
       }
     }
+
+
   }
+
+  &.j-button-size-tiny {
+    font-size: 10px;
+    height: 26px;
+    padding: 0 6px;
+  }
+
+  &.j-button-size-small {
+    font-size: 12px;
+    height: 30px;
+    padding: 0 10px;
+  }
+
+  &.j-button-size-large {
+    font-size: 16px;
+    height: 42px;
+    padding: 0 18px;
+  }
+
+  &.j-button-text {
+    border: none;
+    box-shadow: none;
+  }
+
 }
 
 </style>
