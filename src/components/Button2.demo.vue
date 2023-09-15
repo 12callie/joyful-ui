@@ -1,3 +1,4 @@
+<demo>虚线按钮</demo>
 <script lang="ts" setup>
 import Button from '../lib/Button.vue'
 </script>

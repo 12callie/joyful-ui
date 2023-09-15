@@ -1,3 +1,4 @@
+<demo>文本按钮</demo>
 <script lang="ts" setup>
 import Button from '../lib/Button.vue'
 </script>

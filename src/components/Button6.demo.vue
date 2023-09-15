@@ -1,3 +1,4 @@
+<demo>加载中</demo>
 <script lang="ts" setup>
 import Button from '../lib/Button.vue'
 import { ref } from 'vue'

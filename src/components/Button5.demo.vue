@@ -1,3 +1,4 @@
+<demo>禁用</demo>
 <script lang="ts" setup>
 import Button from '../lib/Button.vue'
 </script>

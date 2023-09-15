@@ -7,15 +7,6 @@ import Button4Demo from '../components/Button4.demo.vue'
 import Button5Demo from '../components/Button5.demo.vue'
 import Button6Demo from '../components/Button6.demo.vue'
 
-const loadingRef = ref(false)
-
-function handleClick () {
-  loadingRef.value = true
-  setTimeout(() => {
-    loadingRef.value = false
-  }, 2000)
-}
-
 const code = ref(false)
 const afterContent = ref('显示代码')
 const codeToggle = () => {
@@ -37,7 +28,7 @@ const codeToggle = () => {
     <div class="demos">
       <div class="demo">
         <div class="demo-title">
-          <div>基础用法</div>
+          <div>{{ Button1Demo.__sourceCodeTitle }}</div>
           <div class="code-toggle" :data-attr="afterContent">
             <svg class="icon" @click="codeToggle">
               <use xlink:href="#icon-toggle"></use>
@@ -50,16 +41,16 @@ const codeToggle = () => {
             <code>default</code>、<code>primary</code>、<code>info</code>、<code>success</code>、<code>warning</code> 和
             <code>error</code>。
           </p>
-          <Button1Demo />
+          <Component :is="Button1Demo" />
         </div>
         <div class="demo-code" v-if="code">
-          <pre>import Button from "../lib/Button.vue";</pre>
+          <pre v-text="Button1Demo.__sourceCode"></pre>
         </div>
       </div>
 
       <div class="demo">
         <div class="demo-title">
-          <div>虚线按钮</div>
+          <div>{{ Button2Demo.__sourceCodeTitle }}</div>
           <div class="code-toggle" :data-attr="afterContent">
             <svg class="icon" @click="codeToggle">
               <use xlink:href="#icon-toggle"></use>
@@ -73,13 +64,13 @@ const codeToggle = () => {
           <Button2Demo />
         </div>
         <div class="demo-code" v-if="code">
-          <pre>import Button from "../lib/Button.vue";</pre>
+          <pre v-text="Button2Demo.__sourceCode"></pre>
         </div>
       </div>
 
       <div class="demo">
         <div class="demo-title">
-          <div>尺寸</div>
+          <div>{{ Button3Demo.__sourceCodeTitle }}</div>
           <div class="code-toggle" :data-attr="afterContent">
             <svg class="icon" @click="codeToggle">
               <use xlink:href="#icon-toggle"></use>
@@ -94,13 +85,14 @@ const codeToggle = () => {
           <Button3Demo />
         </div>
         <div class="demo-code" v-if="code">
-          <pre>import Button from "../lib/Button.vue";</pre>
+          <pre v-text="Button3Demo.__sourceCode"></pre>
         </div>
       </div>
 
       <div class="demo">
         <div class="demo-title">
-          <div>文本按钮</div>
+          <div>{{ Button4Demo.__sourceCodeTitle }}</div>
+
           <div class="code-toggle" :data-attr="afterContent">
             <svg class="icon" @click="codeToggle">
               <use xlink:href="#icon-toggle"></use>
@@ -112,13 +104,14 @@ const codeToggle = () => {
           <Button4Demo />
         </div>
         <div class="demo-code" v-if="code">
-          <pre>import Button from "../lib/Button.vue";</pre>
+          <pre v-text="Button4Demo.__sourceCode"></pre>
         </div>
       </div>
 
       <div class="demo">
         <div class="demo-title">
-          <div>禁用</div>
+          <div>{{ Button5Demo.__sourceCodeTitle }}</div>
+
           <div class="code-toggle" :data-attr="afterContent">
             <svg class="icon" @click="codeToggle">
               <use xlink:href="#icon-toggle"></use>
@@ -130,13 +123,13 @@ const codeToggle = () => {
           <Button5Demo />
         </div>
         <div class="demo-code" v-if="code">
-          <pre>import Button from "../lib/Button.vue";</pre>
+          <pre v-text="Button5Demo.__sourceCode"></pre>
         </div>
       </div>
 
       <div class="demo">
         <div class="demo-title">
-          <div>加载中</div>
+          <div>{{ Button6Demo.__sourceCodeTitle }}</div>
           <div class="code-toggle" :data-attr="afterContent">
             <svg class="icon" @click="codeToggle">
               <use xlink:href="#icon-toggle"></use>
@@ -148,7 +141,7 @@ const codeToggle = () => {
           <Button6Demo />
         </div>
         <div class="demo-code" v-if="code">
-          <pre>import Button from "../lib/Button.vue";</pre>
+          <pre v-text="Button6Demo.__sourceCode"></pre>
         </div>
       </div>
     </div>

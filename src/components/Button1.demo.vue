@@ -1,3 +1,4 @@
+<demo>常规用法</demo>
 <script lang="ts" setup>
 import Button from '../lib/Button.vue'
 </script>
