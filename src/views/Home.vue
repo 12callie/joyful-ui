@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import TopNav from '../components/TopNav.vue'
+import Button from '../lib/Button.vue'
 
 </script>
 
@@ -14,16 +15,15 @@ import TopNav from '../components/TopNav.vue'
     <br />
     <p>本组件库只是用于学习 Vue3，为避免不必要的麻烦，请不要在生产环境中使用</p>
     <div class="actions">
-      <button><a href="http://github.com">GitHub</a></button>
+      <Button><a href="http://github.com">GitHub</a></Button>
       <router-link to="/joyful/doc/install">
-        <button>开始使用</button>
+        <Button theme="primary">开始使用</Button>
       </router-link>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-
 @import "../assets/styles/common.scss";
 
 .content {
