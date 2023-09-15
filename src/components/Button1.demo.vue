@@ -1,8 +1,4 @@
 <demo>常规用法</demo>
-<script lang="ts" setup>
-import Button from '../lib/Button.vue'
-</script>
-
 <template>
   <Button>Default</Button>
   <Button theme="primary">Primary</Button>
@@ -11,3 +7,7 @@ import Button from '../lib/Button.vue'
   <Button theme="warning">Warning</Button>
   <Button theme="error">Error</Button>
 </template>
+
+<script lang="ts" setup>
+import Button from '../lib/Button.vue'
+</script>
