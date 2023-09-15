@@ -1,41 +1,24 @@
 <script lang="ts" setup>
-import Switch from '../lib/Switch.vue'
 import { ref } from 'vue'
+import Demo from '../components/Demo.vue'
+import Switch1Demo from '../components/Switch1.demo.vue'
+import Switch2Demo from '../components/Switch2.demo.vue'
+import Switch3Demo from '../components/Switch3.demo.vue'
+import Switch4Demo from '../components/Switch4.demo.vue'
 
-const active = ref(false)
-const loading = ref(false)
-const handleUpdateValue = (value: boolean) => {
-  loading.value = true
-  setTimeout(() => {
-    active.value = value
-    loading.value = false
-  }, 2000)
-}
+const switch4Description = ref('开关可以设为方形。')
 </script>
 
 <template>
-  <h1>开关 Switch</h1>
-  <h2>演示</h2>
-  <div>
-    <div>基础用法</div>
-    <Switch v-model:value="active"></Switch>
-  </div>
-  <div>
-    <div>禁用</div>
-    <Switch disabled></Switch>
-  </div>
-  <div>
-    <div>加载中</div>
-    <Switch loading></Switch>
-    <Switch
-        :value="active"
-        :loading="loading"
-        @update:value="handleUpdateValue"
-    ></Switch>
-  </div>
-  <div>
-    <div>形状</div>
-    <Switch :square="true" v-model:value="active"></Switch>
+  <div class="button-demos">
+    <h1 class="j-component-demos-h1">开关 Switch</h1>
+    <h2 class="j-component-demos-h2">演示</h2>
+    <div class="j-component-demos">
+      <Demo :component="Switch1Demo"></Demo>
+      <Demo :component="Switch2Demo"></Demo>
+      <Demo :component="Switch3Demo"></Demo>
+      <Demo :component="Switch4Demo" :description="switch4Description"></Demo>
+    </div>
   </div>
 </template>
 
