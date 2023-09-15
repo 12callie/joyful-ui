@@ -6,10 +6,12 @@
     "build": "vite build"
   },
   "dependencies": {
+    "prismjs": "1.21.0",
     "vue": "^3.0.0-rc.1",
     "vue-router": "4"
   },
   "devDependencies": {
+    "@types/prismjs": "^1.26.0",
     "@vue/compiler-sfc": "^3.0.0-rc.1",
     "sass": "1.54.5",
     "vite": "^1.0.0-rc.3"
