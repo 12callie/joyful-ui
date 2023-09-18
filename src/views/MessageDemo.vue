@@ -1,7 +1,11 @@
 <script lang="ts" setup>
 import Demo from '../components/Demo.vue'
 import Message1Demo from '../components/Message1.demo.vue'
+import Message2Demo from '../components/Message2.demo.vue'
+import Message3Demo from '../components/Message3.demo.vue'
+import { ref } from 'vue'
 
+const message2Description = ref('设定 Message 的持续时间。')
 </script>
 
 <template>
@@ -11,6 +15,8 @@ import Message1Demo from '../components/Message1.demo.vue'
     <h2 class="j-component-demos-h2">演示</h2>
     <div class="j-component-demos">
       <Demo :component="Message1Demo" />
+      <Demo :component="Message2Demo" :description="message2Description" />
+      <Demo :component="Message3Demo" />
     </div>
   </div>
 </template>

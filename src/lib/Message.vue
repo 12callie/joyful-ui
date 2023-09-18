@@ -45,6 +45,7 @@ $error-color: #d03050;
   align-items: center;
   flex-direction: row;
   justify-content: center;
+  max-width: 60vw;
   padding: 10px 20px;
   transform: translate(-50%, -50%);
   border-radius: 4px;
@@ -83,8 +84,7 @@ $error-color: #d03050;
 
   .j-message-text {
     font-size: 14px;
-    line-height: 20px;
-    height: 20px;
+    line-height: 24px;
     white-space: pre-wrap;
   }
 }
