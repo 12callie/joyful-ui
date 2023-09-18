@@ -60,5 +60,8 @@ export const useMessage = () => {
     success: (text: string, options?: MessageOptions) => {
       showMessage(text, options, 'success')
     },
+    loading: (text: string, options?: MessageOptions) => {
+      showMessage(text, options, 'loading')
+    },
   }
 }

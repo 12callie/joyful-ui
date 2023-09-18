@@ -27,6 +27,7 @@ const props = withDefaults(defineProps<MessageProps>(), {
       <svg v-if="theme === 'success'" class="icon success">
         <use xlink:href="#icon-success"></use>
       </svg>
+      <span v-if="theme ==='loading'" class="j-message-loadingIndicator"></span>
     </div>
     <p class="j-message-text"> {{ textMessage }}</p>
   </div>
@@ -79,6 +80,16 @@ $error-color: #d03050;
       &.success {
         background-color: $theme-color;
       }
+    }
+
+    .j-message-loadingIndicator {
+      display: block;
+      width: 14px;
+      height: 14px;
+      animation: j-loading-spin 1s infinite linear;
+      border: 2px solid $theme-color;
+      border-top-color: transparent;
+      border-radius: 50%;
     }
   }
 

@@ -40,9 +40,9 @@ const classes = computed(() => {
 
 
 <template>
-  <button class="j-button" :class="classes" :disabled="disabled || loading">
+  <button :class="classes" :disabled="disabled || loading" class="j-button">
     <span></span>
-    <span class="j-button-loadingIndicator" v-if="loading"></span>
+    <span v-if="loading" class="j-button-loadingIndicator"></span>
     <slot />
   </button>
 </template>
@@ -55,20 +55,20 @@ $warning-color: #f0a020;
 $error-color: #d03050;
 .j-button {
   font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
   height: 36px;
+  margin: 8px 12px 8px 0;
+  padding: 0 14px;
   cursor: pointer;
-  background: #fff;
+  transition: all 250ms;
+  white-space: nowrap;
   border: 1px solid rgb(224, 224, 230);
   border-radius: 4px;
+  background: #fff;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  white-space: nowrap;
-  min-width: 0;
-  padding: 0 14px;
-  margin: 8px 12px 8px 0;
-  transition: all 250ms;
 
   &:hover,
   &:focus {
@@ -86,8 +86,8 @@ $error-color: #d03050;
 
     &:hover,
     &:focus {
-      background: lighten($theme-color, 5%);
       border-color: lighten($theme-color, 5%);
+      background: lighten($theme-color, 5%);
     }
   }
 
@@ -97,8 +97,8 @@ $error-color: #d03050;
 
     &:hover,
     &:focus {
-      background: lighten($info-color, 5%);
       border-color: lighten($info-color, 5%);
+      background: lighten($info-color, 5%);
     }
   }
 
@@ -108,8 +108,8 @@ $error-color: #d03050;
 
     &:hover,
     &:focus {
-      background: lighten($theme-color, 5%);
       border-color: lighten($theme-color, 5%);
+      background: lighten($theme-color, 5%);
     }
   }
 
@@ -119,8 +119,8 @@ $error-color: #d03050;
 
     &:hover,
     &:focus {
-      background: lighten($warning-color, 5%);
       border-color: lighten($warning-color, 5%);
+      background: lighten($warning-color, 5%);
     }
   }
 
@@ -130,8 +130,8 @@ $error-color: #d03050;
 
     &:hover,
     &:focus {
-      background: lighten($error-color, 5%);
       border-color: lighten($error-color, 5%);
+      background: lighten($error-color, 5%);
     }
   }
 
@@ -139,62 +139,62 @@ $error-color: #d03050;
     border-style: dashed;
 
     &.j-button-theme-primary {
-      background: #fff;
       color: $theme-color;
       border-color: $theme-color;
+      background: #fff;
 
       &:hover,
       &:focus {
-        border-color: lighten($theme-color, 10%);
         color: lighten($theme-color, 10%);
+        border-color: lighten($theme-color, 10%);
       }
     }
 
     &.j-button-theme-info {
-      background: #fff;
       color: $info-color;
       border-color: $info-color;
+      background: #fff;
 
       &:hover,
       &:focus {
-        border-color: lighten($info-color, 10%);
         color: lighten($info-color, 10%);
+        border-color: lighten($info-color, 10%);
       }
     }
 
     &.j-button-theme-success {
-      background: #fff;
       color: $theme-color;
       border-color: $theme-color;
+      background: #fff;
 
       &:hover,
       &:focus {
-        border-color: lighten($theme-color, 10%);
         color: lighten($theme-color, 10%);
+        border-color: lighten($theme-color, 10%);
       }
     }
 
     &.j-button-theme-warning {
-      background: #fff;
       color: $warning-color;
       border-color: $warning-color;
+      background: #fff;
 
       &:hover,
       &:focus {
-        border-color: lighten($warning-color, 10%);
         color: lighten($warning-color, 10%);
+        border-color: lighten($warning-color, 10%);
       }
     }
 
     &.j-button-theme-error {
-      background: #fff;
       color: $error-color;
       border-color: $error-color;
+      background: #fff;
 
       &:hover,
       &:focus {
-        border-color: lighten($error-color, 10%);
         color: lighten($error-color, 10%);
+        border-color: lighten($error-color, 10%);
       }
     }
 
@@ -207,9 +207,9 @@ $error-color: #d03050;
 
       &:hover,
       &:focus {
-        background: #fff;
-        border-color: rgb(224, 224, 230);
         color: rgb(224, 224, 230);
+        border-color: rgb(224, 224, 230);
+        background: #fff;
       }
     }
   }
@@ -246,22 +246,22 @@ $error-color: #d03050;
 
     &:hover,
     &:focus {
-      background: #fff;
-      border-color: rgb(224, 224, 230);
       color: rgb(224, 224, 230);
+      border-color: rgb(224, 224, 230);
+      background: #fff;
     }
   }
 
   &.j-button-loading {
     cursor: wait;
-    border-color: lighten($theme-color, 10%);
     color: lighten($theme-color, 10%);
+    border-color: lighten($theme-color, 10%);
 
     &[disabled] {
       &:hover,
       &:focus {
-        border-color: lighten($theme-color, 10%);
         color: lighten($theme-color, 10%);
+        border-color: lighten($theme-color, 10%);
       }
     }
   }
@@ -270,21 +270,10 @@ $error-color: #d03050;
     width: 14px;
     height: 14px;
     margin-right: 4px;
+    animation: j-loading-spin 1s infinite linear;
     border: 2px solid $theme-color;
     border-top-color: transparent;
     border-radius: 50%;
-    animation: j-loading-spin 1s infinite linear;
   }
 }
-
-@keyframes j-loading-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 </style>
