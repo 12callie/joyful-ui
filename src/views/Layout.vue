@@ -36,9 +36,9 @@ watchPostEffect(() => {
   <div class="layout">
     <top-nav class="nav" />
     <div class="content">
-      <aside class="menu-aside" ref="menuAside" v-if="menuLocation">
+      <aside v-if="menuLocation" ref="menuAside" class="menu-aside">
         <menu-content />
-        <div class="aside-toggle-button" @click="toggle" ref="svgAsideToggle">
+        <div ref="svgAsideToggle" class="aside-toggle-button" @click="toggle">
           <svg class="icon">
             <use xlink:href="#icon-left"></use>
           </svg>
@@ -56,54 +56,54 @@ watchPostEffect(() => {
 @import "../assets/styles/common.scss";
 
 .layout {
-  height: 100vh;
   display: flex;
   flex-direction: column;
+  height: 100vh;
 
   .nav {
     flex-shrink: 0;
   }
 
   .content {
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-grow: 1;
-    position: relative;
 
     aside {
-      width: 200px;
-      height: 100%;
-      border-right: 1px solid $border-color;
-      flex-shrink: 0;
       position: fixed;
       top: 64px;
-      transition: all 0.3s;
+      flex-shrink: 0;
+      width: 200px;
+      height: 100%;
       padding: 8px;
+      transition: all 0.3s;
+      border-right: 1px solid $border-color;
 
       .aside-toggle-button {
-        border: 1px solid $border-color;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         position: absolute;
         top: 260px;
         left: calc(100% - 12px);
         display: flex;
-        justify-content: center;
         align-items: center;
-        background: #fff;
-        transform-origin: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
         transition: all 0.3s;
+        transform-origin: center;
+        border: 1px solid $border-color;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
       }
     }
 
     main {
-      flex-grow: 1;
       overflow: hidden;
-      padding: 32px 24px 56px 56px;
+      flex-grow: 1;
       margin-top: 64px;
       margin-left: 200px;
+      padding: 32px 24px 56px 56px;
       transition: all 0.3s;
       @media (max-width: 500px) {
         margin-left: 0;

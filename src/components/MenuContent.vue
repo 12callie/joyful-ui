@@ -23,6 +23,9 @@
     <li>
       <router-link to="/joyful/components/switch">开关 Switch</router-link>
     </li>
+    <li>
+      <router-link to="/joyful/components/message">信息 Message</router-link>
+    </li>
   </ol>
 </template>
 
@@ -30,16 +33,16 @@
 @import "../assets/styles/common.scss";
 
 ol {
-  height: 100%;
   overflow: scroll;
+  height: 100%;
 
   &::-webkit-scrollbar {
     display: none;
   }
 
   > li {
-    white-space: nowrap;
     margin-bottom: 4px;
+    white-space: nowrap;
 
     &.menu-title {
       font-size: 20px;
