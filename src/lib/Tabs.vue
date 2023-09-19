@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, useSlots } from 'vue'
+import { computed, useSlots, ref, watchPostEffect } from 'vue'
 import Tab from './Tab.vue'
 
 const slots = useSlots()
@@ -24,25 +24,42 @@ const selectTitle = (newTitle: string) => {
 const current = computed(() => {
   return defaults.find(i => i.props.title === props.selected)
 })
+
+const currentTitle = ref<HTMLDivElement>(null)
+const indicator = ref<HTMLDivElement>(null)
+const container = ref<HTMLDivElement>(null)
+watchPostEffect(() => {
+  const { width } = currentTitle.value.getBoundingClientRect()
+  indicator.value.style.width = width + 'px'
+  const { left: left1 } = container.value.getBoundingClientRect()
+  const { left: left2 } = currentTitle.value.getBoundingClientRect()
+  const left = left2 - left1
+  indicator.value.style.left = left + 'px'
+})
 </script>
 
 <template>
   <div class="j-tabs">
     <div class="j-tabs-nav-wrapper">
-      <div class="j-tabs-nav">
+      <div ref="container" class="j-tabs-nav">
         <div v-for="(t, index) in titles"
              :key="index"
+             :ref="(el)=>{
+               if(t === selected){
+                 currentTitle = el
+               }
+             }"
              :class="{selected: t === selected}"
              class="j-tabs-nav-item"
-             @click="selectTitle(t)">{{ t }}
+             @click="selectTitle(t)">
+          {{ t }}
         </div>
 
-        <div class="j-tabs-nav-indicator"></div>
+        <div ref="indicator" class="j-tabs-nav-indicator"></div>
       </div>
     </div>
     <div class="j-tabs-content">
-      <component :is="current" />
-
+      <component :is="current" :key="current.props.title" />
     </div>
   </div>
 </template>
@@ -87,7 +104,7 @@ $theme-color: #18a058;
       left: 0;
       width: 34px;
       height: 3px;
-      transition: left 0.3s;
+      transition: left 0.25s;
       background: $theme-color;
     }
   }
