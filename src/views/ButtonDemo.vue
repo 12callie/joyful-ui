@@ -25,10 +25,10 @@ const button6Description = ref('按钮有加载状态。')
 
 <template>
   <div class="button-demos">
-    <h1 class="j-component-demos-h1">按钮 Button</h1>
+    <h1 class="component-demos-h1">按钮 Button</h1>
     <p>按钮用来触发一些操作。</p>
-    <h2 class="j-component-demos-h2">演示</h2>
-    <div class="j-component-demos">
+    <h2 class="component-demos-h2">演示</h2>
+    <div class="component-demos">
       <Demo :component="Button1Demo" :description="button1Description" />
       <Demo :component="Button2Demo" :description="button2Description" />
       <Demo :component="Button3Demo" :description="button3Description" />

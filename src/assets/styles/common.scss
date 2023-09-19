@@ -4,22 +4,22 @@ $color: rgb(51, 54, 57);
 $title-color: rgb(31, 34, 37);
 $first-h: 30px;
 $second-h: 22px;
-.j-component-demos-h1 {
+.component-demos-h1 {
   margin-bottom: 24px;
 }
 
-.j-component-demos-h2 {
+.component-demos-h2 {
   margin: 24px 0;
 }
 
 @media (min-width: 1000px) {
-  .j-component-demos {
+  .component-demos {
     display: flex;
+    align-items: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
-    height: 100%;
     justify-content: space-between;
-    align-items: flex-start;
+    height: 100%;
   }
   .demo {
     width: 49%;

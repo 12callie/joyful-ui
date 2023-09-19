@@ -26,6 +26,9 @@
     <li>
       <router-link to="/joyful/components/message">信息 Message</router-link>
     </li>
+    <li>
+      <router-link to="/joyful/components/tabs">标签页 Tabs</router-link>
+    </li>
   </ol>
 </template>
 

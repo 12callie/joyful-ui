@@ -11,9 +11,9 @@ const switch4Description = ref('开关可以设为方形。')
 
 <template>
   <div class="button-demos">
-    <h1 class="j-component-demos-h1">开关 Switch</h1>
-    <h2 class="j-component-demos-h2">演示</h2>
-    <div class="j-component-demos">
+    <h1 class="component-demos-h1">开关 Switch</h1>
+    <h2 class="component-demos-h2">演示</h2>
+    <div class="component-demos">
       <Demo :component="Switch1Demo"></Demo>
       <Demo :component="Switch2Demo"></Demo>
       <Demo :component="Switch3Demo"></Demo>
