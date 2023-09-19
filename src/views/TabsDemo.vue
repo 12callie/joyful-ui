@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import Demo from '../components/Demo.vue'
 import Tabs1Demo from '../components/Tabs1.demo.vue'
-import { ref } from 'vue'
 
 </script>
 
