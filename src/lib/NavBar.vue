@@ -31,7 +31,7 @@ const props = defineProps({
       </svg>
       <span>{{ leftText }}</span>
     </div>
-    <span class="j-nav-bar-title">{{ title }}</span>
+    <div class="j-nav-bar-title">{{ title }}</div>
     <div class="j-nav-bar-right" @click="onClickRight">
       {{ rightText }}
       <slot name="rightIcon"></slot>
@@ -56,6 +56,7 @@ const props = defineProps({
     align-items: center;
     flex-direction: row;
     padding: 0 16px;
+    cursor: pointer;
 
     svg {
       width: 18px;
@@ -66,13 +67,13 @@ const props = defineProps({
 
   .j-nav-bar-title {
     max-width: 60%;
+    cursor: default;
   }
 
   .j-nav-bar-right {
     font-size: 14px;
     padding: 0 16px;
-
-
+    cursor: pointer;
   }
 }
 </style>
