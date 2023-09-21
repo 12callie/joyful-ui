@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import Demo from '../components/Demo.vue'
 import NavBar1Demo from '../components/NavBar1.demo.vue'
-
 </script>
 
 <template>
@@ -15,3 +14,13 @@ import NavBar1Demo from '../components/NavBar1.demo.vue'
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.component-demos {
+  ::v-deep(.demo-content) {
+    padding: 8px 16px;
+    background-color: rgb(247, 248, 250);
+  }
+}
+
+</style>
