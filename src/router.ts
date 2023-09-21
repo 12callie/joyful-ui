@@ -8,6 +8,7 @@ import ButtonDemo from './views/ButtonDemo.vue'
 import SwitchDemo from './views/SwitchDemo.vue'
 import MessageDemo from './views/MessageDemo.vue'
 import TabsDemo from './views/TabsDemo.vue'
+import NavBarDemo from './views/NavBarDemo.vue'
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -35,6 +36,7 @@ export const router = createRouter({
             { path: 'switch', component: SwitchDemo },
             { path: 'message', component: MessageDemo },
             { path: 'tabs', component: TabsDemo },
+            { path: 'navBar', component: NavBarDemo },
           ],
         },
       ],
