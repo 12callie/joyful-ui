@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <article>
+  <article class="markdown-body">
     <h1>安装</h1>
     <p class="notice">注意，joyful-ui 仅支持 Vue3。</p>
     <br />

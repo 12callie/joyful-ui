@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <article>
+  <article class="markdown-body">
     <h1>介绍</h1>
     <p>Joyful UI 是一个 Vue3 的组件库。</p>
     <p>要了解如何安装，参见<a href="/joyful/doc/install">安装</a>。</p>
