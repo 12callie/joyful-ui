@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Theme } from './index'
+import { Theme } from './type'
 
 interface MessageProps {
   theme: Theme

@@ -1,0 +1,1 @@
+export type  Theme = 'info' | 'success' | 'warning' | 'error' | 'loading'

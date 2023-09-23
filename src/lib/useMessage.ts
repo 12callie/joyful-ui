@@ -1,6 +1,6 @@
 import { ref, createApp, h } from 'vue'
 import Message from './Message.vue'
-import { Theme } from './index'
+import { Theme } from './type'
 
 interface MessageOptions {
   duration?: number
