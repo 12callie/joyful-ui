@@ -1,6 +1,5 @@
 <demo>基础用法</demo>
 <template>
-  <div>基础用法</div>
   <Button @click="openDialog">打开对话框</Button>
   <Dialog
       v-model:dialogVisible="dialogVisible"
