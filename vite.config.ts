@@ -4,6 +4,8 @@ import * as fs from 'fs'
 import { baseParse } from '@vue/compiler-core'
 
 export default {
+  base: './',
+  assetsDir: 'assets',
   vueCustomBlockTransforms: {
     demo: (options) => {  //文件中含有demo标签，就会进行处理
       const { path } = options
