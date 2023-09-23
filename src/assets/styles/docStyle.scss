@@ -1,0 +1,15 @@
+@import "./common.scss";
+
+article {
+  h1 {
+    margin-bottom: 16px;
+  }
+  
+  a {
+    color: $theme-color;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

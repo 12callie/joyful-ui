@@ -11,7 +11,7 @@ const dialog2Description = ref('调用一个函数就可以打开对话框了。
 <template>
   <div class="button-demos">
     <h1 class="component-demos-h1">对话框 Dialog</h1>
-    <p></p>
+    <p>弹出模态框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作，支持函数调用和组件调用两种方式。</p>
     <h2 class="component-demos-h2">演示</h2>
     <div class="component-demos">
       <Demo :component="Dialog1Demo" />

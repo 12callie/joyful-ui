@@ -1,4 +1,4 @@
-<demo>常规用法</demo>
+<demo>基础用法</demo>
 <template>
   <Button>Default</Button>
   <Button theme="primary">Primary</Button>

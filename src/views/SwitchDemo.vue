@@ -12,6 +12,7 @@ const switch4Description = ref('开关可以设为方形。')
 <template>
   <div class="button-demos">
     <h1 class="component-demos-h1">开关 Switch</h1>
+    <p>用于在打开和关闭状态之间进行切换。</p>
     <h2 class="component-demos-h2">演示</h2>
     <div class="component-demos">
       <Demo :component="Switch1Demo"></Demo>
@@ -21,6 +22,3 @@ const switch4Description = ref('开关可以设为方形。')
     </div>
   </div>
 </template>
-
-
-<style lang="scss" scoped></style>
