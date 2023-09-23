@@ -30,7 +30,10 @@
       <router-link to="/joyful/components/tabs">标签页 Tabs</router-link>
     </li>
     <li>
-      <router-link to="/joyful/components/navBar">导航栏 NavBar</router-link>
+      <router-link to="/joyful/components/navbar">导航栏 NavBar</router-link>
+    </li>
+    <li>
+      <router-link to="/joyful/components/dialog">对话框 Dialog</router-link>
     </li>
   </ol>
 </template>
