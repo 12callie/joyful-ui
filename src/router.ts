@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from './views/Home.vue'
 import Layout from './views/Layout.vue'
 import Intro from './views/Intro.vue'
@@ -12,7 +12,7 @@ import NavBarDemo from './views/NavBarDemo.vue'
 import DialogDemo from './views/DialogDemo.vue'
 
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [
     { path: '/', component: Home },
     { path: '/home', redirect: '/' },

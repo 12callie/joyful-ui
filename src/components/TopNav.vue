@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { inject, Ref, ref } from 'vue'
 import MenuContent from './MenuContent.vue'
-
+import logoIcon from '../assets/img/logo.png'
 const menuLocation = inject<Ref<boolean>>('menuLocation')
 const levitationMenuVisible = ref(false)
 const toggleMenu = () => {
@@ -13,7 +13,7 @@ const toggleMenu = () => {
   <div class="top-nav">
     <div class="nav-content">
       <router-link to="/" class="logo">
-        <img src="../assets/img/logo.png" alt="logo" />
+        <img :src="logoIcon" alt="logo" />
         <span v-if="menuLocation" class="logo-text">Joyful UI</span>
       </router-link>
       <svg v-if="!menuLocation" class="icon" @click="toggleMenu">
